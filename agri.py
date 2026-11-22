@@ -68,7 +68,7 @@ if selected=='Weather Forecasting':
                     if not OPENWEATHER_API_KEY:
                         st.error("Weather forecasting is not configured. Add OPENWEATHER_API_KEY to Streamlit Secrets.")
                         st.stop()
-                    owm = pyowm.OWM(11081b639d8ada3e97fc695bcf6ddb20)
+                    owm = pyowm.OWM('11081b639d8ada3e97fc695bcf6ddb20')
                     mgr = owm.weather_manager()
                     observation = mgr.weather_at_place(id)
                     weather = observation.weather
