@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 import warnings
 warnings.filterwarnings('ignore')
 import requests
-YOUTUBE_API_KEY = st.secrets.get("AIzaSyDYEeSTrT7pPpVzpmaJ491gxogVxfWwpvM", "")
+YOUTUBE_API_KEY = st.secrets.get("YOUTUBE_API_KEY", "")
 
 def fetch_youtube_videos(query, max_results=6):
     if not YOUTUBE_API_KEY:
