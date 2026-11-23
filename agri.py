@@ -62,19 +62,27 @@ st.markdown(
         padding-bottom: 2.5rem;
     }
 
+    /* Sidebar & main radio pills: light pill with dark text for both light and dark modes */
     div[data-testid="stRadio"] > div[role="radiogroup"] {
-        gap: 0.35rem;
+        gap: 0.4rem;
     }
     div[data-testid="stRadio"] label {
-        background: #F8FAFC;
-        border: 1px solid #E2E8F0;
-        border-radius: 8px;
-        padding: 0.45rem 0.75rem;
+        background-color: #F1F5F9 !important;
+        border: 1px solid #CBD5E1 !important;
+        border-radius: 8px !important;
+        padding: 0.5rem 0.8rem !important;
         transition: all 0.18s ease;
     }
+    div[data-testid="stRadio"] label,
+    div[data-testid="stRadio"] label p,
+    div[data-testid="stRadio"] label span,
+    div[data-testid="stRadio"] label div {
+        color: #0F172A !important;
+        font-weight: 600 !important;
+    }
     div[data-testid="stRadio"] label:hover {
-        border-color: #2D6A4F;
-        background: #EDF6F2;
+        border-color: #2D6A4F !important;
+        background-color: #DCFCE7 !important;
     }
 
     .stButton > button, .stFormSubmitButton > button {
@@ -247,6 +255,37 @@ st.markdown(
         padding-top: 1.25rem;
         border-top: 1px solid #E2E8F0;
         margin-top: 2.5rem;
+    }
+
+    /* Dark mode card adjustments */
+    @media (prefers-color-scheme: dark) {
+        .info-card, .stat-card, .video-card {
+            background-color: #1E293B !important;
+            border-color: #334155 !important;
+        }
+        .info-card-title {
+            color: #F8FAFC !important;
+        }
+        .info-card-text, .stat-label {
+            color: #CBD5E1 !important;
+        }
+        .stat-value {
+            color: #86EFAC !important;
+        }
+        .page-heading {
+            background-color: #132A20 !important;
+        }
+        .page-heading h2 {
+            color: #A7F3D0 !important;
+        }
+        .page-heading p {
+            color: #CBD5E1 !important;
+        }
+        .slide-caption {
+            background-color: #1E293B !important;
+            border-color: #334155 !important;
+            color: #E2E8F0 !important;
+        }
     }
     </style>
     """,
@@ -510,7 +549,7 @@ if "yield_result" not in st.session_state:
     st.session_state.yield_result = None
 
 with st.sidebar:
-    st.title("Smart Agriculture System Using ML")
+    st.title("Smart Agriculture")
     st.caption("Crop Recommendation and Yield Prediction")
     st.divider()
 
@@ -531,7 +570,7 @@ with st.sidebar:
     st.session_state.nav_page = selected
 
     st.divider()
-    st.caption("Developed by Cheruku Bhanu Prakash IITPatna - MCA")
+    st.caption("Developed by Cheruku Bhanu Prakash\nIIT Patna - MCA 3rd Sem Project")
 
 
 # 1. Home Page
@@ -539,7 +578,7 @@ if selected == "Home":
     st.markdown(
         """
         <div class="header-box">
-            <div class="header-tag">IIT PATNA • MCA 3RD SEMESTER MINOR PROJECT</div>
+            <div class="header-tag">IIT PATNA • MCA 3RD SEMESTER PROJECT</div>
             <h1>Smart Agriculture System</h1>
             <p>
                 Machine learning and weather analytics application for crop suitability
@@ -1457,7 +1496,7 @@ st.markdown(
     """
     <div class="footer-text">
         Smart Agriculture System • All Rights Reserved 2026
-        <br/>Developed by Cheruku Bhanu Prakash | IIT Patna MCA
+        <br/>Developed by Cheruku Bhanu Prakash | IIT Patna MCA Project
     </div>
     """,
     unsafe_allow_html=True,
